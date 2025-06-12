@@ -11,5 +11,6 @@ config_version=5
 [application]
 
 config/name="Weathered paths mailmans quest"
+run/main_scene="uid://dqe0rbg35d01j"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"

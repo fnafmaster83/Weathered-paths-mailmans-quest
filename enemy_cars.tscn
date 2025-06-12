@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://462taxqnt1n0"]
+
+[ext_resource type="Texture2D" uid="uid://2p3uwgf25lej" path="res://weird car.png" id="1_e1ffr"]
+[ext_resource type="Texture2D" uid="uid://dqqlvoy3u137x" path="res://dumper.png" id="2_568iq"]
+[ext_resource type="Texture2D" uid="uid://d1qmikte8vnbq" path="res://big boy.png" id="3_1a70d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1ffr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_568iq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1a70d"]
+
+[node name="enemy cars" type="Node2D"]
+position = Vector2(-1603, -116)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="Sprite2D4" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(6325, -3565)
+texture = ExtResource("3_1a70d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Sprite2D4"]
+position = Vector2(-2671, 295)
+shape = SubResource("RectangleShape2D_e1ffr")
+
+[node name="WeirdCar3" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(3736, -3154)
+texture = ExtResource("1_e1ffr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/WeirdCar3"]
+position = Vector2(1041, 114)
+shape = SubResource("RectangleShape2D_568iq")
+
+[node name="Dumper2" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(4896, -3292)
+texture = ExtResource("2_568iq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D/Dumper2"]
+position = Vector2(1364, -668)
+shape = SubResource("RectangleShape2D_1a70d")

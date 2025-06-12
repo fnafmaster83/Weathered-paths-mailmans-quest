@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqe0rbg35d01j"]
+
+[ext_resource type="Texture2D" uid="uid://dwmfdtyvgy212" path="res://Screenshot 2025-06-10 145004.png" id="1_1qyie"]
+[ext_resource type="Script" uid="uid://dfqo60epd8b0d" path="res://title_screen_mainmenu.gd" id="1_uufk5"]
+[ext_resource type="Texture2D" uid="uid://coblmi5u085lq" path="res://Screenshot 2025-06-10 145027.png" id="2_uufk5"]
+[ext_resource type="Texture2D" uid="uid://dwa8l41kv50sw" path="res://Screenshot 2025-06-10 145205.png" id="3_hko4l"]
+
+[node name="title screen mainmenu" type="Node2D"]
+script = ExtResource("1_uufk5")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextEdit" type="TextEdit" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 59.0
+offset_top = 558.0
+offset_right = -462.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "welcome too my wacky racing click on one of the worlds too worlds to play them"
+placeholder_text = "welcome too my wacky racing click on one of the worlds too worlds to play them"
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
+offset_left = -78.0
+offset_top = 49.0
+offset_right = 492.0
+offset_bottom = 453.0
+scale = Vector2(0.62, 0.62)
+texture_normal = ExtResource("1_1qyie")
+
+[node name="TextureButton2" type="TextureButton" parent="CanvasLayer"]
+offset_left = 314.0
+offset_right = 1051.0
+offset_bottom = 528.0
+scale = Vector2(0.53, 0.53)
+texture_normal = ExtResource("2_uufk5")
+stretch_mode = 0
+
+[node name="TextureButton3" type="TextureButton" parent="CanvasLayer"]
+offset_left = 682.0
+offset_top = -52.0
+offset_right = 1091.0
+offset_bottom = 565.0
+scale = Vector2(1.18535, 0.964623)
+texture_normal = ExtResource("3_hko4l")
+
+[connection signal="pressed" from="CanvasLayer/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/TextureButton3" to="." method="_on_texture_button_3_pressed"]

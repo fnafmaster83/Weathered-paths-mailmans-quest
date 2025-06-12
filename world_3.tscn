@@ -1,0 +1,235 @@
+[gd_scene load_steps=10 format=3 uid="uid://cj3fndq5v63cs"]
+
+[ext_resource type="Texture2D" uid="uid://m6idy6al3a37" path="res://Race-Track-Tile-Set-PNG/PNG/Decor/Rock_01.png" id="1_usgg7"]
+[ext_resource type="Texture2D" uid="uid://dh1ekapectsw8" path="res://Race-Track-Tile-Set-PNG/PNG/Decor/Tree_01.png" id="2_6c7x5"]
+[ext_resource type="Texture2D" uid="uid://b44ndd0k0mr74" path="res://Race-Track-Tile-Set-PNG/PNG/Decor/Rock_02.png" id="3_wx14w"]
+[ext_resource type="Texture2D" uid="uid://dc2yd2d0r47ui" path="res://Race-Track-Tile-Set-PNG/PNG/Decor/Start.png" id="4_5fw0f"]
+[ext_resource type="PackedScene" uid="uid://bq5n2exvqtf26" path="res://player cars.tscn" id="5_bk3r8"]
+[ext_resource type="Texture2D" uid="uid://bbgack6cgjyfu" path="res://Race-Track-Tile-Set-PNG/PNG/Decor/Decor_Building_02.png" id="6_wx14w"]
+[ext_resource type="Texture2D" uid="uid://v1iytii3pa66" path="res://Race-Track-Tile-Set-PNG/PNG/Decor/Finish.png" id="7_5fw0f"]
+[ext_resource type="Texture2D" uid="uid://he47p40u0ak4" path="res://Race-Track-Tile-Set-PNG/PNG/Road_02/Road_02_Tile_06/Layers/Road_Side_01.png" id="8_bk3r8"]
+[ext_resource type="Texture2D" uid="uid://dy3k4y6yylcao" path="res://Race-Track-Tile-Set-PNG/PNG/Road_02/Road_02_Tile_07/Layers/Road_Side_01.png" id="9_w512l"]
+
+[node name="world3" type="Sprite2D"]
+position = Vector2(-918, 20593)
+scale = Vector2(2.09104, 7.14444)
+texture = ExtResource("1_usgg7")
+metadata/_edit_horizontal_guides_ = [-25779.0, -25779.0]
+
+[node name="Rock01" type="Sprite2D" parent="."]
+position = Vector2(535.316, 969.828)
+scale = Vector2(1, 5.3705)
+texture = ExtResource("1_usgg7")
+
+[node name="Rock02" type="Sprite2D" parent="."]
+position = Vector2(278.58, -280.336)
+texture = ExtResource("1_usgg7")
+
+[node name="Rock03" type="Sprite2D" parent="."]
+position = Vector2(-267.677, -304.388)
+texture = ExtResource("1_usgg7")
+
+[node name="Rock04" type="Sprite2D" parent="."]
+position = Vector2(-548.976, 909.871)
+scale = Vector2(1.00006, 5.31477)
+texture = ExtResource("1_usgg7")
+
+[node name="Rock05" type="Sprite2D" parent="."]
+position = Vector2(778.376, -301.679)
+texture = ExtResource("1_usgg7")
+
+[node name="Rock06" type="Sprite2D" parent="."]
+position = Vector2(994.121, 29.196)
+texture = ExtResource("1_usgg7")
+
+[node name="Rock07" type="Sprite2D" parent="."]
+position = Vector2(-46.4238, -557.872)
+texture = ExtResource("1_usgg7")
+
+[node name="Rock08" type="Sprite2D" parent="."]
+position = Vector2(516.17, -581.887)
+texture = ExtResource("1_usgg7")
+
+[node name="Rock09" type="Sprite2D" parent="."]
+position = Vector2(-38.0448, -1422.59)
+scale = Vector2(1.6837, 3.61211)
+texture = ExtResource("1_usgg7")
+
+[node name="Tree01" type="Sprite2D" parent="."]
+position = Vector2(895.271, -771.868)
+texture = ExtResource("2_6c7x5")
+
+[node name="Tree02" type="Sprite2D" parent="."]
+position = Vector2(-574.835, -795.864)
+scale = Vector2(0.827837, 0.66596)
+texture = ExtResource("2_6c7x5")
+
+[node name="Tree03" type="Sprite2D" parent="."]
+position = Vector2(-871.495, -181.579)
+texture = ExtResource("2_6c7x5")
+
+[node name="Tree04" type="Sprite2D" parent="."]
+position = Vector2(1138.33, -90.4136)
+texture = ExtResource("2_6c7x5")
+
+[node name="Tree05" type="Sprite2D" parent="."]
+position = Vector2(816.162, -1320.78)
+texture = ExtResource("2_6c7x5")
+
+[node name="Tree06" type="Sprite2D" parent="."]
+position = Vector2(-627.44, -1381.63)
+texture = ExtResource("2_6c7x5")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Rock10" type="Sprite2D" parent="."]
+position = Vector2(-81.3785, -2140.56)
+scale = Vector2(16.8122, 2.95278)
+texture = ExtResource("3_wx14w")
+
+[node name="Tree07" type="Sprite2D" parent="."]
+position = Vector2(-834.967, -1559.4)
+texture = ExtResource("2_6c7x5")
+
+[node name="Tree08" type="Sprite2D" parent="."]
+position = Vector2(-1646.16, -1520.91)
+texture = ExtResource("2_6c7x5")
+
+[node name="Tree09" type="Sprite2D" parent="."]
+position = Vector2(-2365.49, -1544.01)
+texture = ExtResource("2_6c7x5")
+
+[node name="Tree10" type="Sprite2D" parent="."]
+position = Vector2(-3223.15, -1567.1)
+texture = ExtResource("2_6c7x5")
+
+[node name="Tree11" type="Sprite2D" parent="."]
+position = Vector2(-3983.98, -1574.8)
+texture = ExtResource("2_6c7x5")
+
+[node name="Tree12" type="Sprite2D" parent="."]
+position = Vector2(876.142, -1559.4)
+texture = ExtResource("2_6c7x5")
+
+[node name="Tree13" type="Sprite2D" parent="."]
+position = Vector2(1613.3, -1605.58)
+texture = ExtResource("2_6c7x5")
+
+[node name="Tree14" type="Sprite2D" parent="."]
+position = Vector2(2448.49, -1628.68)
+texture = ExtResource("2_6c7x5")
+
+[node name="Tree15" type="Sprite2D" parent="."]
+position = Vector2(3306.15, -1628.68)
+texture = ExtResource("2_6c7x5")
+
+[node name="Tree16" type="Sprite2D" parent="."]
+position = Vector2(4149.98, -1582.49)
+texture = ExtResource("2_6c7x5")
+
+[node name="Tree17" type="Sprite2D" parent="."]
+position = Vector2(4979.97, -1605.58)
+texture = ExtResource("2_6c7x5")
+
+[node name="Tree18" type="Sprite2D" parent="."]
+position = Vector2(-4744.81, -1505.52)
+texture = ExtResource("2_6c7x5")
+
+[node name="Tree19" type="Sprite2D" parent="."]
+position = Vector2(-5491.8, -1567.1)
+texture = ExtResource("2_6c7x5")
+
+[node name="Rock11" type="Sprite2D" parent="."]
+position = Vector2(0, 1050.26)
+scale = Vector2(1, 4.99464)
+texture = ExtResource("1_usgg7")
+
+[node name="Start" type="Sprite2D" parent="."]
+position = Vector2(-16.427, 963.388)
+scale = Vector2(1.24835, 0.173904)
+texture = ExtResource("4_5fw0f")
+
+[node name="Tree20" type="Sprite2D" parent="."]
+position = Vector2(-1049.92, 204.007)
+texture = ExtResource("2_6c7x5")
+
+[node name="Tree21" type="Sprite2D" parent="."]
+position = Vector2(-1119.09, 809.922)
+texture = ExtResource("2_6c7x5")
+
+[node name="Tree22" type="Sprite2D" parent="."]
+position = Vector2(-1368.09, 1318.59)
+texture = ExtResource("2_6c7x5")
+
+[node name="Tree23" type="Sprite2D" parent="."]
+position = Vector2(-1171.18, 1887.1)
+texture = ExtResource("2_6c7x5")
+
+[node name="Tree24" type="Sprite2D" parent="."]
+position = Vector2(1052.73, 338.654)
+texture = ExtResource("2_6c7x5")
+
+[node name="Tree25" type="Sprite2D" parent="."]
+position = Vector2(1274.06, 847.324)
+texture = ExtResource("2_6c7x5")
+
+[node name="Tree26" type="Sprite2D" parent="."]
+position = Vector2(1287.9, 1341.03)
+texture = ExtResource("2_6c7x5")
+
+[node name="Tree27" type="Sprite2D" parent="."]
+position = Vector2(1274.06, 1879.62)
+texture = ExtResource("2_6c7x5")
+
+[node name="Tree28" type="Sprite2D" parent="."]
+position = Vector2(-482.759, 2066.64)
+texture = ExtResource("2_6c7x5")
+
+[node name="Tree29" type="Sprite2D" parent="."]
+position = Vector2(485.569, 2096.56)
+texture = ExtResource("2_6c7x5")
+
+[node name="player cars" parent="." instance=ExtResource("5_bk3r8")]
+position = Vector2(-6.10352e-05, 1726.66)
+scale = Vector2(0.6, 0.2)
+engine_power = 1600.0
+steering_power = 16.605
+
+[node name="Camera2D" type="Camera2D" parent="player cars"]
+position = Vector2(2513.44, 23932.7)
+rotation = 3.14158
+scale = Vector2(835.162, 107.925)
+zoom = Vector2(0.046, 0.014)
+
+[node name="DecorBuilding02" type="Sprite2D" parent="."]
+position = Vector2(497.654, -3459.15)
+scale = Vector2(6.45537, 1.57132)
+texture = ExtResource("6_wx14w")
+
+[node name="Finish" type="Sprite2D" parent="."]
+position = Vector2(1138.31, -2887.55)
+scale = Vector2(1.74999, 1)
+texture = ExtResource("7_5fw0f")
+
+[node name="Rock12" type="Sprite2D" parent="."]
+position = Vector2(539.924, -2449.36)
+texture = ExtResource("1_usgg7")
+
+[node name="Rock13" type="Sprite2D" parent="."]
+position = Vector2(1762.77, -2459.46)
+texture = ExtResource("1_usgg7")
+
+[node name="RoadSide01" type="Sprite2D" parent="."]
+position = Vector2(20856.9, 1706.86)
+scale = Vector2(0.233494, 0.260593)
+texture = ExtResource("8_bk3r8")
+
+[node name="RoadSide02" type="Sprite2D" parent="."]
+position = Vector2(20927.5, 1743.33)
+scale = Vector2(0.42527, 0.206557)
+texture = ExtResource("9_w512l")
+
+[node name="RoadSide03" type="Sprite2D" parent="."]
+position = Vector2(20933.1, 1738.55)
+scale = Vector2(1, 0.118155)
+texture = ExtResource("9_w512l")
