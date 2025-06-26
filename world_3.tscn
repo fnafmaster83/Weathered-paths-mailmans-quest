@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cj3fndq5v63cs"]
+[gd_scene load_steps=13 format=3 uid="uid://cj3fndq5v63cs"]
 
 [ext_resource type="Texture2D" uid="uid://m6idy6al3a37" path="res://Race-Track-Tile-Set-PNG/PNG/Decor/Rock_01.png" id="1_usgg7"]
 [ext_resource type="Texture2D" uid="uid://dh1ekapectsw8" path="res://Race-Track-Tile-Set-PNG/PNG/Decor/Tree_01.png" id="2_6c7x5"]
+[ext_resource type="Script" uid="uid://jtlon1vh76q8" path="res://world_3.gd" id="2_rtwtq"]
 [ext_resource type="Texture2D" uid="uid://b44ndd0k0mr74" path="res://Race-Track-Tile-Set-PNG/PNG/Decor/Rock_02.png" id="3_wx14w"]
 [ext_resource type="Texture2D" uid="uid://dc2yd2d0r47ui" path="res://Race-Track-Tile-Set-PNG/PNG/Decor/Start.png" id="4_5fw0f"]
 [ext_resource type="PackedScene" uid="uid://bq5n2exvqtf26" path="res://player cars.tscn" id="5_bk3r8"]
@@ -9,16 +10,19 @@
 [ext_resource type="Texture2D" uid="uid://v1iytii3pa66" path="res://Race-Track-Tile-Set-PNG/PNG/Decor/Finish.png" id="7_5fw0f"]
 [ext_resource type="Texture2D" uid="uid://he47p40u0ak4" path="res://Race-Track-Tile-Set-PNG/PNG/Road_02/Road_02_Tile_06/Layers/Road_Side_01.png" id="8_bk3r8"]
 [ext_resource type="Texture2D" uid="uid://dy3k4y6yylcao" path="res://Race-Track-Tile-Set-PNG/PNG/Road_02/Road_02_Tile_07/Layers/Road_Side_01.png" id="9_w512l"]
+[ext_resource type="AudioStream" uid="uid://cn6fu78i8amja" path="res://Fantasy RPG Music Pack/mp3/Action 3.mp3" id="11_rtwtq"]
+[ext_resource type="Texture2D" uid="uid://bg55j6ntpnsy2" path="res://images.jpg" id="13_5ue4o"]
 
 [node name="world3" type="Sprite2D"]
-position = Vector2(-918, 20593)
-scale = Vector2(2.09104, 7.14444)
+position = Vector2(-917.887, 20593)
+scale = Vector2(2.09135, 7.14444)
 texture = ExtResource("1_usgg7")
+script = ExtResource("2_rtwtq")
 metadata/_edit_horizontal_guides_ = [-25779.0, -25779.0]
 
 [node name="Rock01" type="Sprite2D" parent="."]
-position = Vector2(535.316, 969.828)
-scale = Vector2(1, 5.3705)
+position = Vector2(496.275, 969.828)
+scale = Vector2(1.2897, 5.3705)
 texture = ExtResource("1_usgg7")
 
 [node name="Rock02" type="Sprite2D" parent="."]
@@ -30,8 +34,8 @@ position = Vector2(-267.677, -304.388)
 texture = ExtResource("1_usgg7")
 
 [node name="Rock04" type="Sprite2D" parent="."]
-position = Vector2(-548.976, 909.871)
-scale = Vector2(1.00006, 5.31477)
+position = Vector2(-554.958, 909.871)
+scale = Vector2(1.52015, 5.31477)
 texture = ExtResource("1_usgg7")
 
 [node name="Rock05" type="Sprite2D" parent="."]
@@ -43,7 +47,8 @@ position = Vector2(994.121, 29.196)
 texture = ExtResource("1_usgg7")
 
 [node name="Rock07" type="Sprite2D" parent="."]
-position = Vector2(-46.4238, -557.872)
+position = Vector2(-130.629, -557.872)
+scale = Vector2(1.2339, 1)
 texture = ExtResource("1_usgg7")
 
 [node name="Rock08" type="Sprite2D" parent="."]
@@ -182,24 +187,12 @@ position = Vector2(1274.06, 1879.62)
 texture = ExtResource("2_6c7x5")
 
 [node name="Tree28" type="Sprite2D" parent="."]
-position = Vector2(-482.759, 2066.64)
+position = Vector2(-627.877, 2076.44)
 texture = ExtResource("2_6c7x5")
 
 [node name="Tree29" type="Sprite2D" parent="."]
-position = Vector2(485.569, 2096.56)
+position = Vector2(577.563, 2047.19)
 texture = ExtResource("2_6c7x5")
-
-[node name="player cars" parent="." instance=ExtResource("5_bk3r8")]
-position = Vector2(-6.10352e-05, 1726.66)
-scale = Vector2(0.6, 0.2)
-engine_power = 1600.0
-steering_power = 16.605
-
-[node name="Camera2D" type="Camera2D" parent="player cars"]
-position = Vector2(2513.44, 23932.7)
-rotation = 3.14158
-scale = Vector2(835.162, 107.925)
-zoom = Vector2(0.046, 0.014)
 
 [node name="DecorBuilding02" type="Sprite2D" parent="."]
 position = Vector2(497.654, -3459.15)
@@ -212,11 +205,13 @@ scale = Vector2(1.74999, 1)
 texture = ExtResource("7_5fw0f")
 
 [node name="Rock12" type="Sprite2D" parent="."]
-position = Vector2(539.924, -2449.36)
+position = Vector2(539.924, -2468.8)
+scale = Vector2(1, 1.09084)
 texture = ExtResource("1_usgg7")
 
 [node name="Rock13" type="Sprite2D" parent="."]
-position = Vector2(1762.77, -2459.46)
+position = Vector2(1762.77, -2478.89)
+scale = Vector2(1, 1.09079)
 texture = ExtResource("1_usgg7")
 
 [node name="RoadSide01" type="Sprite2D" parent="."]
@@ -233,3 +228,29 @@ texture = ExtResource("9_w512l")
 position = Vector2(20933.1, 1738.55)
 scale = Vector2(1, 0.118155)
 texture = ExtResource("9_w512l")
+
+[node name="player cars" parent="." instance=ExtResource("5_bk3r8")]
+position = Vector2(-6.10352e-05, 1726.66)
+scale = Vector2(0.6, 0.2)
+engine_power = 1600.0
+steering_power = 16.605
+
+[node name="Camera2D" type="Camera2D" parent="player cars"]
+rotation = 3.14158
+scale = Vector2(835.162, 107.925)
+zoom = Vector2(0.2, 0.2)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_rtwtq")
+autoplay = true
+parameters/looping = true
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+offset_left = 485.278
+offset_top = -3150.0
+offset_right = 721.278
+offset_bottom = -2936.0
+scale = Vector2(0.52, 0.19)
+texture_normal = ExtResource("13_5ue4o")
+
+[connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]

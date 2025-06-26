@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cpc6m3vg4txkj"
+path="res://.godot/imported/Dark Ambient 5.mp3-e91b613e0a6640b54bf3e73241431fe7.mp3str"
+
+[deps]
+
+source_file="res://Fantasy RPG Music Pack/mp3/Dark Ambient 5.mp3"
+dest_files=["res://.godot/imported/Dark Ambient 5.mp3-e91b613e0a6640b54bf3e73241431fe7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

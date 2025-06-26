@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt3rumw45ovgi"]
+
+[ext_resource type="Script" uid="uid://0uucuwanpjmr" path="res://victory_screen.gd" id="1_qyds8"]
+[ext_resource type="Texture2D" uid="uid://cvtm4mttmmr14" path="res://Screenshot 2025-06-16 114501.png" id="2_r8dr5"]
+
+[node name="victory screen" type="TextEdit"]
+offset_right = 750.0
+offset_bottom = 377.0
+text = "congradulations you won try one of our other maps and beat them too. thanks for the package"
+script = ExtResource("1_qyds8")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 648.0
+offset_top = 242.0
+offset_right = 1206.0
+offset_bottom = 569.0
+scale = Vector2(0.185, 0.415)
+texture_normal = ExtResource("2_r8dr5")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

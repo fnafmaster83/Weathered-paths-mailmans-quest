@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://rkdv6f5kr8d3"
+path="res://.godot/imported/Fx 1.mp3-06a0de18c3f6ea1b3e5055648fa05fac.mp3str"
+
+[deps]
+
+source_file="res://Fantasy RPG Music Pack/mp3/Fx 1.mp3"
+dest_files=["res://.godot/imported/Fx 1.mp3-06a0de18c3f6ea1b3e5055648fa05fac.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

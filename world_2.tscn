@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://duikoidpaqkab"]
+[gd_scene load_steps=15 format=3 uid="uid://duikoidpaqkab"]
 
 [ext_resource type="Texture2D" uid="uid://b8ssba53u21ml" path="res://Race-Track-Tile-Set-PNG/PNG/Background_Tiles/Grass_Tile.png" id="1_eiokd"]
+[ext_resource type="Script" uid="uid://ckgsr6my4laul" path="res://world_2.gd" id="1_n5srx"]
 [ext_resource type="Texture2D" uid="uid://bamv21067opf" path="res://Race-Track-Tile-Set-PNG/PNG/Decor/Bush_01.png" id="2_ngp3s"]
 [ext_resource type="Texture2D" uid="uid://cjg5r53235tut" path="res://Race-Track-Tile-Set-PNG/PNG/Decor/Bush_02.png" id="3_56e56"]
 [ext_resource type="Texture2D" uid="uid://dh1ekapectsw8" path="res://Race-Track-Tile-Set-PNG/PNG/Decor/Tree_01.png" id="4_q40lw"]
@@ -11,10 +12,13 @@
 [ext_resource type="Texture2D" uid="uid://bie7a5jx0pj80" path="res://Race-Track-Tile-Set-PNG/PNG/Decor/Tree_02.png" id="9_3nhlu"]
 [ext_resource type="Texture2D" uid="uid://dc2yd2d0r47ui" path="res://Race-Track-Tile-Set-PNG/PNG/Decor/Start.png" id="10_ngp3s"]
 [ext_resource type="PackedScene" uid="uid://bq5n2exvqtf26" path="res://player cars.tscn" id="11_56e56"]
+[ext_resource type="AudioStream" uid="uid://ge3xof167stb" path="res://Fantasy RPG Music Pack/mp3/Action 2.mp3" id="13_n5srx"]
+[ext_resource type="Texture2D" uid="uid://bg55j6ntpnsy2" path="res://images.jpg" id="15_5stuy"]
 
 [node name="world 2" type="Node2D"]
 position = Vector2(19551, 2523)
 scale = Vector2(2.26307, 2.0358)
+script = ExtResource("1_n5srx")
 
 [node name="GrassTile" type="Sprite2D" parent="."]
 position = Vector2(1232.5, -193.5)
@@ -359,3 +363,17 @@ steering_power = 16.605
 [node name="Camera2D" type="Camera2D" parent="player cars"]
 rotation = 3.14159
 zoom = Vector2(0.2, 0.2)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_n5srx")
+autoplay = true
+parameters/looping = true
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+offset_left = -10449.1
+offset_top = -21244.2
+offset_right = -10213.1
+offset_bottom = -21030.2
+texture_normal = ExtResource("15_5stuy")
+
+[connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]

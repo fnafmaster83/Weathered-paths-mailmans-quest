@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cjrwudom3q3bd"
+path="res://.godot/imported/Dark Ambient 1.wav-16d8910ca5215f9c6aed4997890c454c.sample"
+
+[deps]
+
+source_file="res://Fantasy RPG Music Pack/wav/Dark Ambient 1.wav"
+dest_files=["res://.godot/imported/Dark Ambient 1.wav-16d8910ca5215f9c6aed4997890c454c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

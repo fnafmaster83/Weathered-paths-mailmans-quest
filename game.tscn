@@ -1,6 +1,7 @@
-[gd_scene load_steps=43 format=3 uid="uid://l7cuyn6608wm"]
+[gd_scene load_steps=46 format=3 uid="uid://l7cuyn6608wm"]
 
 [ext_resource type="Texture2D" uid="uid://tawrrd5thit8" path="res://Race-Track-Tile-Set-PNG/PNG/Background_Tiles/Soil_Tile.png" id="1_5b14r"]
+[ext_resource type="Script" uid="uid://bs3sikh7vibwj" path="res://game.gd" id="1_t46w6"]
 [ext_resource type="Texture2D" uid="uid://dh1ekapectsw8" path="res://Race-Track-Tile-Set-PNG/PNG/Decor/Tree_01.png" id="2_bnpwn"]
 [ext_resource type="Texture2D" uid="uid://dc2yd2d0r47ui" path="res://Race-Track-Tile-Set-PNG/PNG/Decor/Start.png" id="3_36jdj"]
 [ext_resource type="Texture2D" uid="uid://c1p0sdql5ksxv" path="res://Race-Track-Tile-Set-PNG/PNG/Road_01/Road_01_Tile_01/Road_01_Tile_01.png" id="4_xfvwf"]
@@ -42,13 +43,16 @@
 [ext_resource type="Texture2D" uid="uid://dsaejy7vs6pkp" path="res://Race-Track-Tile-Set-PNG/PNG/Road_02/Road_02_Tile_02/Layers/Road_Side_02.png" id="40_87ddb"]
 [ext_resource type="Texture2D" uid="uid://cwxbsvtl12dko" path="res://Race-Track-Tile-Set-PNG/PNG/Road_02/Road_02_Tile_01/Layers/Road_Side_02.png" id="41_mljfx"]
 [ext_resource type="PackedScene" uid="uid://bq5n2exvqtf26" path="res://player cars.tscn" id="42_eu6ph"]
+[ext_resource type="AudioStream" uid="uid://hkegodl53ugg" path="res://Fantasy RPG Music Pack/mp3/Action 4.mp3" id="44_t46w6"]
+[ext_resource type="Texture2D" uid="uid://bg55j6ntpnsy2" path="res://images.jpg" id="46_m28ev"]
 
 [node name="game" type="Node2D"]
 position = Vector2(-21647, 27911)
 scale = Vector2(3.03643, 2.64065)
+script = ExtResource("1_t46w6")
 
 [node name="WaterTile6" type="Sprite2D" parent="."]
-position = Vector2(3463.5, -7163.5)
+position = Vector2(3391.15, -7523.53)
 scale = Vector2(27.1465, 34.1269)
 texture = ExtResource("29_xfvwf")
 
@@ -635,7 +639,7 @@ position = Vector2(2576, -5731)
 texture = ExtResource("26_cfc7e")
 
 [node name="Pavilion03" type="Sprite2D" parent="."]
-position = Vector2(-912.491, -14741.6)
+position = Vector2(-908.633, -14724.8)
 rotation = 3.14159
 scale = Vector2(2.13037, 4.54834)
 texture = ExtResource("24_qpefm")
@@ -662,3 +666,29 @@ texture = ExtResource("1_5b14r")
 position = Vector2(29267.3, -8112.07)
 scale = Vector2(-143.899, 0.816472)
 texture = ExtResource("41_mljfx")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("44_t46w6")
+autoplay = true
+parameters/looping = true
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+offset_left = -838.484
+offset_top = -14373.0
+offset_right = -602.484
+offset_bottom = -14159.0
+scale = Vector2(0.215, 0.34)
+texture_normal = ExtResource("46_m28ev")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-857.586, -465.415, 109.01, -473.368, 241.073, -801.317, 442.625, -1025.13, -426.488, -1017.17, -746.271, -1217.12, -920.16, -1592.79, -864.502, -2040.79, -475.229, -2312.31, 519.031, -2336.55, 1534.37, -2320.64, 1778.73, -2203.25, 2063.61, -2332, 2511.83, -2332, 2878.38, -2097.97, 3244.6, -2097.97, 3631.57, -1863.93, 4038.95, -1828.72, 4252.69, -2297.16, 4659.75, -2402.44, 4731.21, -2320.64, 5138.27, -2343.74, 5270.66, -2893.98, 5128.06, -3291.99, 4486.85, -3280.25, 4242.48, -3362.43, 3987.91, -3257.15, 3488.97, -3291.99, 3153.05, -3479.45, 2745.99, -3514.66, 2379.44, -3772.18, 1961.84, -3818.76, 1483.32, -4041.43, 1493.53, -3830.5, 974.5, -3830.5, -3678, -3736.96, -3749.14, 1195.54, -754.504, 1180.01)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(912.256, -3914.94, 722.559, -4133.07, 736.062, -4881, 1494.85, -4881, 1887.74, -4694.3, 2036.93, -4631.81, 2375.49, -4585.23, 2727.87, -4398.16, 3175.11, -4289.1, 3459.66, -4164.5, 4001.74, -4039.54, 5072.08, -4039.54, 5275.27, -4569.33, 5505.81, -5208.19, 5830.86, -5410.79, 6372.94, -5223.71, 6576.14, -5068.07, 6684.5, -5255.15, 6386.45, -5426.32, 5993.55, -5535.38, 5736.01, -5722.45, 4313.29, -5691.4, 4313.29, -5441.84, 3906.89, -5457.75, 3500.16, -5426.32, 3107.27, -5426.32, 3025.92, -5192.66, 2185.79, -5130.55, 2321.48, -5441.84, 1738.88, -5675.88, 2077.44, -5769.41, 2077.44, -6376.84, 2890.57, -6361.31, 3242.95, -6345.79, 3459.66, -6688.5, 3839.05, -6844.53, 3649.35, -7155.81, 3256.46, -7249.35, 2809.22, -7046.75, 1630.2, -7062.66, 1657.54, -7670.08, 1142.46, -7685.61, 73.1123, -7760.97, -1694.42, -7911.69, -2480.22, -7560.26, -3156.67, -8636.89, -3003.86, -9063.3, -2982.12, -10970.4, -2742.04, -10995.8, -2720.3, -13806.1, -2196.33, -14032.2, -2327.4, -14784.6, -2458.15, -16147.2, 1279.13, -16108.5, 583.251, -15797.2, 544.719, -14241.6, 978.452, -13492.5, 978.452, -11466.9, 2631.71, -11139.7, 3688.54, -11108.6, 4067.94, -10672, 4311.97, -10625.4, 4799.72, -11233.2, 5653.35, -11124.2, 6222.44, -10640.9, 5843.05, -10781.1, 5856.55, -8054.46, 5829.54, -6349.19, 6236.27, -6395.77, 6493.48, -7097.12, 7496.3, -7081.59, 7767.35, -6847.94, 7889.2, -6458.26, 8444.79, -6411.3, 8417.78, -7346.3, 9420.6, -7330.77, 9461.11, -6473.78, 9447.61, -5897.41, 9447.61, -5523.26, 7618.16, -5243.03, 7536.81, -4697.71, 7252.27, -4323.56, 6439.47, -4214.49, 6168.43, -4432.62, 6046.25, -4136.48, 7171.25, -4089.9, 8363.44, -4167.91, 9569.46, -4089.9, 9366.26, -3170.43, 8363.44, -3201.86, 7821.36, -3263.97, 6900.21, -3186.34, 6805.36, -3341.98, 5856.55, -3186.34, 5802.54, -2905.72, 5992.23, -2422.51, 5713.62, -1797.28, 5362.22, -1613.62, 4786.87, -1613.62, 4467.42, -1025.5, 3317.38, -988.771, 2422.58, -1503.42, 1943.4, -1613.62, 1975.35, -915.305, 1975.35, -621.438, 2773.98, -584.704, 2773.98, 847.897, 2742.04, 1325.81, 10282.5, 1252.34, 10218.6, -16236.2, 2135.07, -16236.2, -3424.42, -16199.4, -3584.14, -4001.67)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(4442.06, -6179.54, 4857.02, -6137.88, 4911.03, -9746.46, 4153.56, -9497.66, 3612.47, -8937.57, 1105.57, -9020.51, -355.352, -8854.64, -355.352, -8730.05, 1520.21, -8564.18, 3251.85, -8336.21, 4135.45, -8024.92, 4514.18, -7651.9, 4730.56, -7195.58, 4694.66, -6469.62)
+
+[connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]

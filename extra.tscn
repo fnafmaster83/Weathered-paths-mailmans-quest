@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://d4hjlrbfqmo4m"]
+
+[ext_resource type="Texture2D" uid="uid://cy81jfbmmvwu8" path="res://Race-Track-Tile-Set-PNG/PNG/Road_02/Road_02_Tile_07/Layers/Road_Main.png" id="1_3bnve"]
+[ext_resource type="Texture2D" uid="uid://2p3uwgf25lej" path="res://weird car.png" id="2_55t5p"]
+[ext_resource type="Texture2D" uid="uid://dqqlvoy3u137x" path="res://dumper.png" id="3_pquju"]
+[ext_resource type="Texture2D" uid="uid://b1cw1q4ijidh" path="res://Civil Vehicles assets-taxi.png" id="4_coon4"]
+
+[node name="extra" type="Node2D"]
+
+[node name="RoadMain" type="Sprite2D" parent="."]
+position = Vector2(18260, -20119.5)
+scale = Vector2(526.5, 168.604)
+texture = ExtResource("1_3bnve")
+
+[node name="WeirdCar" type="Sprite2D" parent="."]
+position = Vector2(39124, -25061)
+scale = Vector2(18.9359, 9.63845)
+texture = ExtResource("2_55t5p")
+
+[node name="Dumper" type="Sprite2D" parent="."]
+position = Vector2(4996, -22065.5)
+scale = Vector2(85.65, 27.9441)
+texture = ExtResource("3_pquju")
+
+[node name="CivilVehiclesAssets-taxi" type="Sprite2D" parent="."]
+position = Vector2(5105, -5756)
+scale = Vector2(78.6331, 4.13502)
+texture = ExtResource("4_coon4")
+
+[node name="WeirdCar2" type="Sprite2D" parent="."]
+position = Vector2(52756, -24933)
+scale = Vector2(16.9431, 9.63845)
+texture = ExtResource("2_55t5p")
+
+[node name="WeirdCar3" type="Sprite2D" parent="."]
+position = Vector2(64886, -24805)
+scale = Vector2(15.7892, 9.48368)
+texture = ExtResource("2_55t5p")
+
+[node name="WeirdCar4" type="Sprite2D" parent="."]
+position = Vector2(76998.9, -24869)
+scale = Vector2(17.7099, 9.40629)
+texture = ExtResource("2_55t5p")

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcfphicq8eday"]
+
+[ext_resource type="Texture2D" uid="uid://b0ump3u41ajd" path="res://element of surprise.png" id="1_cd1xm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tnxy5"]
+size = Vector2(760, 1271)
+
+[node name="enemy car 2_0" type="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, -25.5)
+shape = SubResource("RectangleShape2D_tnxy5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cd1xm")
