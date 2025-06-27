@@ -376,4 +376,6 @@ offset_right = -10213.1
 offset_bottom = -21030.2
 texture_normal = ExtResource("15_5stuy")
 
+[node name="Area2D" type="Area2D" parent="."]
+
 [connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]

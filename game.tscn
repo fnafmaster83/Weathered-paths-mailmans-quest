@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://l7cuyn6608wm"]
+[gd_scene load_steps=47 format=3 uid="uid://l7cuyn6608wm"]
 
 [ext_resource type="Texture2D" uid="uid://tawrrd5thit8" path="res://Race-Track-Tile-Set-PNG/PNG/Background_Tiles/Soil_Tile.png" id="1_5b14r"]
 [ext_resource type="Script" uid="uid://bs3sikh7vibwj" path="res://game.gd" id="1_t46w6"]
@@ -44,6 +44,7 @@
 [ext_resource type="Texture2D" uid="uid://cwxbsvtl12dko" path="res://Race-Track-Tile-Set-PNG/PNG/Road_02/Road_02_Tile_01/Layers/Road_Side_02.png" id="41_mljfx"]
 [ext_resource type="PackedScene" uid="uid://bq5n2exvqtf26" path="res://player cars.tscn" id="42_eu6ph"]
 [ext_resource type="AudioStream" uid="uid://hkegodl53ugg" path="res://Fantasy RPG Music Pack/mp3/Action 4.mp3" id="44_t46w6"]
+[ext_resource type="PackedScene" uid="uid://dvmqk75dxymfn" path="res://coin.tscn" id="46_lwlx3"]
 [ext_resource type="Texture2D" uid="uid://bg55j6ntpnsy2" path="res://images.jpg" id="46_m28ev"]
 
 [node name="game" type="Node2D"]
@@ -690,5 +691,9 @@ polygon = PackedVector2Array(912.256, -3914.94, 722.559, -4133.07, 736.062, -488
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(4442.06, -6179.54, 4857.02, -6137.88, 4911.03, -9746.46, 4153.56, -9497.66, 3612.47, -8937.57, 1105.57, -9020.51, -355.352, -8854.64, -355.352, -8730.05, 1520.21, -8564.18, 3251.85, -8336.21, 4135.45, -8024.92, 4514.18, -7651.9, 4730.56, -7195.58, 4694.66, -6469.62)
+
+[node name="Area2D2" parent="." instance=ExtResource("46_lwlx3")]
+position = Vector2(737.379, 682.029)
+scale = Vector2(0.245, 0.245)
 
 [connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]
