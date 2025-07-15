@@ -51,19 +51,17 @@
 position = Vector2(-21647, 27911)
 scale = Vector2(3.03643, 2.64065)
 script = ExtResource("1_t46w6")
+metadata/_edit_horizontal_guides_ = [19234.0]
 
 [node name="WaterTile6" type="Sprite2D" parent="."]
 position = Vector2(3391.15, -7523.53)
 scale = Vector2(27.1465, 34.1269)
 texture = ExtResource("29_xfvwf")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -742.0
-offset_top = -471.0
-offset_right = 2610.0
-offset_bottom = 1001.0
+[node name="SoilTile10" type="Sprite2D" parent="."]
+position = Vector2(959.351, 330.601)
+scale = Vector2(6.5468, 3.20115)
 texture = ExtResource("1_5b14r")
-metadata/_edit_use_anchors_ = true
 
 [node name="Tree01" type="Sprite2D" parent="."]
 position = Vector2(-228, 713)
@@ -117,7 +115,7 @@ scale = Vector2(1.09859, 1)
 texture = ExtResource("6_7knny")
 
 [node name="Road01Tile07" type="Sprite2D" parent="."]
-position = Vector2(-21.3245, -1376)
+position = Vector2(-4.61079, -1381.86)
 scale = Vector2(1.05595, 1)
 texture = ExtResource("6_7knny")
 
@@ -130,8 +128,8 @@ position = Vector2(-567, -1964)
 texture = ExtResource("5_dhpj7")
 
 [node name="Road01Tile10" type="Sprite2D" parent="."]
-position = Vector2(-8.43153, -1966.74)
-scale = Vector2(1.10632, 1)
+position = Vector2(4.6106, -1965.16)
+scale = Vector2(1.10632, 1.02236)
 texture = ExtResource("8_xex6t")
 
 [node name="Road01Tile11" type="Sprite2D" parent="."]
@@ -692,8 +690,8 @@ polygon = PackedVector2Array(912.256, -3914.94, 722.559, -4133.07, 736.062, -488
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(4442.06, -6179.54, 4857.02, -6137.88, 4911.03, -9746.46, 4153.56, -9497.66, 3612.47, -8937.57, 1105.57, -9020.51, -355.352, -8854.64, -355.352, -8730.05, 1520.21, -8564.18, 3251.85, -8336.21, 4135.45, -8024.92, 4514.18, -7651.9, 4730.56, -7195.58, 4694.66, -6469.62)
 
-[node name="Area2D2" parent="." instance=ExtResource("46_lwlx3")]
-position = Vector2(737.379, 682.029)
-scale = Vector2(0.245, 0.245)
+[node name="Area2D" parent="Area2D" instance=ExtResource("46_lwlx3")]
+position = Vector2(715.643, 475.64)
+scale = Vector2(0.405, 0.55)
 
 [connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]

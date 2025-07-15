@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://duikoidpaqkab"]
+[gd_scene load_steps=16 format=3 uid="uid://duikoidpaqkab"]
 
 [ext_resource type="Texture2D" uid="uid://b8ssba53u21ml" path="res://Race-Track-Tile-Set-PNG/PNG/Background_Tiles/Grass_Tile.png" id="1_eiokd"]
 [ext_resource type="Script" uid="uid://ckgsr6my4laul" path="res://world_2.gd" id="1_n5srx"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bq5n2exvqtf26" path="res://player cars.tscn" id="11_56e56"]
 [ext_resource type="AudioStream" uid="uid://ge3xof167stb" path="res://Fantasy RPG Music Pack/mp3/Action 2.mp3" id="13_n5srx"]
 [ext_resource type="Texture2D" uid="uid://bg55j6ntpnsy2" path="res://images.jpg" id="15_5stuy"]
+[ext_resource type="PackedScene" uid="uid://dvmqk75dxymfn" path="res://coin.tscn" id="15_lbh55"]
 
 [node name="world 2" type="Node2D"]
 position = Vector2(19551, 2523)
@@ -376,6 +377,8 @@ offset_right = -10213.1
 offset_bottom = -21030.2
 texture_normal = ExtResource("15_5stuy")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" parent="." instance=ExtResource("15_lbh55")]
+position = Vector2(-12793.2, -21244.2)
+scale = Vector2(0.75, 0.95)
 
 [connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]
