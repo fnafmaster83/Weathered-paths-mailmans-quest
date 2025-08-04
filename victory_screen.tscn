@@ -5,22 +5,30 @@
 [ext_resource type="AudioStream" uid="uid://c0paaj4wcwn54" path="res://Fantasy RPG Music Pack/wav/Light Ambience 4.wav" id="3_r8dr5"]
 
 [node name="victory screen" type="TextEdit"]
-offset_right = 750.0
-offset_bottom = 377.0
-text = "congradulations you won try one of our other maps and beat them too. thanks for the package"
+offset_top = 4.0
+offset_right = 927.0
+offset_bottom = 381.0
+text = "congradulations you won the first level try one of our other maps and beat them too their are 5 levels too play"
 script = ExtResource("1_qyds8")
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 648.0
-offset_top = 242.0
-offset_right = 1206.0
-offset_bottom = 569.0
+offset_left = 824.0
+offset_top = 245.0
+offset_right = 1382.0
+offset_bottom = 572.0
 scale = Vector2(0.185, 0.415)
 texture_normal = ExtResource("2_r8dr5")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_r8dr5")
 autoplay = true
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_top = 28.0
+offset_right = 709.0
+offset_bottom = 189.0
+text = "you delivered the package an escaped the enemy good job now deliver too our other maps"
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

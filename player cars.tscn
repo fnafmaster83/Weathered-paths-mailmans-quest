@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lhdcb"]
 size = Vector2(63, 166)
 
-[node name="car2" type="RigidBody2D"]
+[node name="car2" type="RigidBody2D" groups=["Player"]]
 script = ExtResource("1_rimcc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

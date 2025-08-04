@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://duikoidpaqkab"]
+[gd_scene load_steps=17 format=3 uid="uid://duikoidpaqkab"]
 
 [ext_resource type="Texture2D" uid="uid://b8ssba53u21ml" path="res://Race-Track-Tile-Set-PNG/PNG/Background_Tiles/Grass_Tile.png" id="1_eiokd"]
 [ext_resource type="Script" uid="uid://ckgsr6my4laul" path="res://world_2.gd" id="1_n5srx"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://ge3xof167stb" path="res://Fantasy RPG Music Pack/mp3/Action 2.mp3" id="13_n5srx"]
 [ext_resource type="Texture2D" uid="uid://bg55j6ntpnsy2" path="res://images.jpg" id="15_5stuy"]
 [ext_resource type="PackedScene" uid="uid://dvmqk75dxymfn" path="res://coin.tscn" id="15_lbh55"]
+[ext_resource type="PackedScene" uid="uid://dsi3h0ivnqg1o" path="res://enemy car 2_0.tscn" id="16_lbh55"]
 
 [node name="world 2" type="Node2D"]
 position = Vector2(19551, 2523)
@@ -358,8 +359,6 @@ texture = ExtResource("10_ngp3s")
 
 [node name="player cars" parent="." instance=ExtResource("11_56e56")]
 position = Vector2(7156.21, 3015.03)
-engine_power = 1600.0
-steering_power = 16.605
 
 [node name="Camera2D" type="Camera2D" parent="player cars"]
 rotation = 3.14159
@@ -380,5 +379,12 @@ texture_normal = ExtResource("15_5stuy")
 [node name="Area2D" parent="." instance=ExtResource("15_lbh55")]
 position = Vector2(-12793.2, -21244.2)
 scale = Vector2(0.75, 0.95)
+
+[node name="enemy car 2_0" parent="." instance=ExtResource("16_lbh55")]
+position = Vector2(7151.79, 5307.5)
+target_path = NodePath("../player cars")
+speed = 1000.0
+rotation_speed = 30.0
+friction = 40.0
 
 [connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]

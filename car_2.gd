@@ -49,4 +49,7 @@ func apply_car_physics(throttle: float, steering: float, brake: float, delta: fl
 	
 	var forward_velocity = global_transform.basis_xform(Vector2(0, local_velocity.y))
 	var side_velocity = global_transform.basis_xform(Vector2(local_velocity.x, 0))
-	linear_velocity = forward_velocity + side_velocity * drift_factor
+	linear_velocity = forward_velocity + side_velocity * drift_factor 
+
+func reload_scene():
+	get_tree().reload_current_scene()

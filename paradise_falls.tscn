@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c8btu03rr3a14"]
+[gd_scene load_steps=15 format=3 uid="uid://c8btu03rr3a14"]
 
 [ext_resource type="Script" uid="uid://ojd86vye5aii" path="res://paradise_falls.gd" id="1_3a0qs"]
 [ext_resource type="Texture2D" uid="uid://bie7a5jx0pj80" path="res://Race-Track-Tile-Set-PNG/PNG/Decor/Tree_02.png" id="1_nhs0u"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://pf8alr5j8ogq" path="res://Race-Track-Tile-Set-PNG/PNG/Road_01/Road_01_Tile_06/Layers/Road_Side_02.png" id="9_3li01"]
 [ext_resource type="PackedScene" uid="uid://bq5n2exvqtf26" path="res://player cars.tscn" id="10_6xhqh"]
 [ext_resource type="Texture2D" uid="uid://dfn8b00t3pj85" path="res://coin-removebg-preview.png" id="11_l6y2i"]
+[ext_resource type="PackedScene" uid="uid://dvmqk75dxymfn" path="res://coin.tscn" id="12_3li01"]
+[ext_resource type="Texture2D" uid="uid://v1iytii3pa66" path="res://Race-Track-Tile-Set-PNG/PNG/Decor/Finish.png" id="13_6xhqh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3a0qs"]
 radius = 306.289
@@ -828,11 +830,11 @@ offset_left = -9739.0
 offset_top = -1584.0
 offset_right = -9501.0
 offset_bottom = -1309.0
-scale = Vector2(0.245, 0.288)
+scale = Vector2(0.34, 0.4)
 texture_normal = ExtResource("11_l6y2i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-9712.9, -1542.47)
+position = Vector2(-9700, -1523.29)
 scale = Vector2(0.495, 0.495)
 shape = SubResource("CapsuleShape2D_3a0qs")
 
@@ -953,11 +955,18 @@ texture = ExtResource("7_6xhqh")
 [node name="car2" parent="." instance=ExtResource("10_6xhqh")]
 position = Vector2(618, -90)
 scale = Vector2(0.16, 0.16)
-engine_power = 1000.0
-steering_power = 14.605
 
 [node name="Camera2D" type="Camera2D" parent="car2"]
 rotation = 0.523598
 scale = Vector2(0.11, 0.11)
+
+[node name="Area2D2" parent="." instance=ExtResource("12_3li01")]
+position = Vector2(-1562, 1889)
+scale = Vector2(0.43, 0.43)
+
+[node name="Finish" type="Sprite2D" parent="."]
+position = Vector2(-1147, 4285)
+scale = Vector2(0.646853, 0.646067)
+texture = ExtResource("13_6xhqh")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

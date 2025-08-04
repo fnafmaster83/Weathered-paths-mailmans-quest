@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuj3vxmejmkrc"]
+
+[ext_resource type="Script" uid="uid://e38cn1u3udxq" path="res://victory_screen_5.gd" id="1_i17qg"]
+[ext_resource type="Texture2D" uid="uid://cvtm4mttmmr14" path="res://Screenshot 2025-06-16 114501.png" id="2_o48in"]
+
+[node name="victory screen 5" type="TextEdit"]
+offset_right = 1152.0
+offset_bottom = 512.0
+text = "good job you have beaten level 5 have you had fun playing all 5 levels?"
+script = ExtResource("1_i17qg")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 598.0
+offset_top = 180.0
+offset_right = 1156.0
+offset_bottom = 512.0
+texture_normal = ExtResource("2_o48in")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

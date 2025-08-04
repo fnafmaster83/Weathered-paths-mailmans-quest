@@ -1,158 +1,114 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Car Chase Game</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
-</head>
-<body>
-<script>
-let playerCar;
-let enemyCar;
-let mapWidth = 800;
-let mapHeight = 600;
-let gameOver = false;
+#extends RigidBody2D
+#
+#@export_group("Enemy Car Settings")
+#@export var engine_power: float = 700.0
+#@export var steering_power: float = 3.5
+#@export var drift_factor: float = 0.9
+#@export var max_speed: float = 1000.0
+#
+#@export var player_car: Node
+#
+#func _ready():
+	#gravity_scale = 0
+	#linear_damp = 1.0
+	#angular_damp = 3.0
+	#
+	## Find the player car automatically (optional)
+	##player_car = get_node_or_null("/root/Main/PlayerCar") # Change to match your scene path
+#
+#func _physics_process(delta):
+	#if player_car == null:
+		#return
+#
+	#var to_target = (player_car.global_position - global_position)
+	#var distance = to_target.length()
+	#var direction = to_target.normalized()
+#
+	## Convert global direction to local space
+	#var local_direction = global_transform.basis_xform_inv(direction)
+#
+	## Decide whether to move forward or stop (optional)
+	#var throttle = 1.0
+	#var steering = 0.0
+#
+	## Steer towards player
+	#if abs(local_direction.x) > 0.1:
+		#steering = sign(local_direction.x)
+#
+	#apply_enemy_physics(throttle, steering, delta)
+#
+#func apply_enemy_physics(throttle: float, steering: float, delta: float):
+	#var local_velocity = global_transform.basis_xform_inv(linear_velocity)
+#
+	## Engine force in local space (forward only)
+	#var engine_force = Vector2(0, -throttle * engine_power)
+	#var force = global_transform.basis_xform(engine_force)
+	#apply_central_force(force)
+#
+	## Steering torque
+	#var speed = linear_velocity.length()
+	#if speed > 5.0:
+		#var steer_force = steering * steering_power * speed
+		#apply_torque(steer_force)
+#
+	## Drift control
+	#var forward_velocity = global_transform.basis_xform(Vector2(0, local_velocity.y))
+	#var side_velocity = global_transform.basis_xform(Vector2(local_velocity.x, 0))
+	#linear_velocity = forward_velocity + side_velocity * drift_factor
+#
+	## Limit max speed
+	#if linear_velocity.length() > max_speed:
+		#linear_velocity = linear_velocity.normalized() * max_speed
+extends CharacterBody2D
 
-function setup() {
-  createCanvas(mapWidth, mapHeight);
-  // Initialize player car at center
-  playerCar = {
-	x: mapWidth / 2,
-	y: mapHeight / 2,
-	angle: 0,
-	speed: 0,
-	maxSpeed: 5,
-	acceleration: 0.2,
-	rotationSpeed: 0.05
-  };
-  // Initialize enemy car at a random position
-  enemyCar = {
-	x: random(50, mapWidth - 50),
-	y: random(50, mapHeight - 50),
-	angle: 0,
-	speed: 0,
-	maxSpeed: 3,
-	acceleration: 0.1
-  };
-}
+# Exported variables for editor customization
+@export var target_path: NodePath = NodePath()  # Path to the target node
+@export var speed: float = 200.0  # Maximum movement speed
+@export var rotation_speed: float = 5.0  # Rotation speed in radians/second
+@export var acceleration: float = 1000.0  # Acceleration rate
+@export var friction: float = 500.0  # Deceleration rate
 
-function draw() {
-  background(220);
-  // Draw map boundaries
-  stroke(0);
-  noFill();
-  rect(0, 0, mapWidth, mapHeight);
+# Internal variables
+var _target: Node2D = null
+var _velocity: Vector2 = Vector2.ZERO
 
-  if (!gameOver) {
-	// Update and draw player car
-	updatePlayerCar();
-	drawCar(playerCar, color(0, 0, 255)); // Blue for player
+func _ready() -> void:
+	# Get the target node from the exported path
+	if target_path:
+		_target = get_node_or_null(target_path)
 
-	// Update and draw enemy car
-	updateEnemyCar();
-	drawCar(enemyCar, color(255, 0, 0)); // Red for enemy
+func _physics_process(delta: float) -> void:
+	if not _target:
+		return
+	
+	# Get direction to target
+	var direction: Vector2 = (_target.global_position - global_position).normalized()
+	
+	# Rotate towards target
+	var target_angle: float = direction.angle()
+	var current_angle: float = global_rotation
+	var angle_diff: float = wrapf(target_angle - current_angle, -PI, PI)
+	var max_rotation: float = rotation_speed * delta
+	# Smoothly rotate by clamping the rotation change
+	global_rotation += clamp(angle_diff, -max_rotation, max_rotation)
+	
+	# Move towards target
+	var desired_velocity: Vector2 = direction * speed
+	var accel: Vector2 = (desired_velocity - _velocity) * acceleration * delta
+	
+	# Apply friction when not accelerating
+	if accel.length() < 0.01:
+		accel = -_velocity * friction * delta
+	
+	_velocity += accel
+	# Clamp velocity to max speed
+	_velocity = _velocity.limit_length(speed)
+	
+	# Apply movement
+	velocity = _velocity
+	move_and_slide()
 
-	// Check for collision
-	if (checkCollision()) {
-	  gameOver = true;
-	}
-  } else {
-	// Display game over message
-	textSize(32);
-	fill(255, 0, 0);
-	textAlign(CENTER, CENTER);
-	text("Game Over! Press R to Restart", mapWidth / 2, mapHeight / 2);
-  }
-}
 
-function updatePlayerCar() {
-  // Player controls
-  if (keyIsDown(UP_ARROW)) {
-	playerCar.speed = min(playerCar.speed + playerCar.acceleration, playerCar.maxSpeed);
-  } else if (keyIsDown(DOWN_ARROW)) {
-	playerCar.speed = max(playerCar.speed - playerCar.acceleration, -playerCar.maxSpeed / 2);
-  } else {
-	playerCar.speed *= 0.95; // Gradual slowdown
-  }
-  if (keyIsDown(LEFT_ARROW)) {
-	playerCar.angle -= playerCar.rotationSpeed;
-  }
-  if (keyIsDown(RIGHT_ARROW)) {
-	playerCar.angle += playerCar.rotationSpeed;
-  }
-
-  // Update player position
-  playerCar.x += cos(playerCar.angle) * playerCar.speed;
-  playerCar.y += sin(playerCar.angle) * playerCar.speed;
-
-  // Keep player within map bounds
-  playerCar.x = constrain(playerCar.x, 20, mapWidth - 20);
-  playerCar.y = constrain(playerCar.y, 20, mapHeight - 20);
-}
-
-function updateEnemyCar() {
-  // Calculate direction to player
-  let dx = playerCar.x - enemyCar.x;
-  let dy = playerCar.y - enemyCar.y;
-  let targetAngle = atan2(dy, dx);
-
-  // Smoothly rotate towards player
-  let angleDiff = targetAngle - enemyCar.angle;
-  angleDiff = (angleDiff + PI) % TWO_PI - PI; // Normalize to [-PI, PI]
-  enemyCar.angle += constrain(angleDiff, -0.05, 0.05);
-
-  // Move towards player autonomously
-  let distance = dist(enemyCar.x, enemyCar.y, playerCar.x, playerCar.y);
-  if (distance > 20) { // Reduced minimum distance for collision
-	enemyCar.speed = min(enemyCar.speed + enemyCar.acceleration, enemyCar.maxSpeed);
-  } else {
-	enemyCar.speed *= 0.9; // Slow down when very close
-  }
-
-  // Update enemy position
-  enemyCar.x += cos(enemyCar.angle) * enemyCar.speed;
-  enemyCar.y += sin(enemyCar.angle) * enemyCar.speed;
-
-  // Keep enemy within map bounds
-  enemyCar.x = constrain(enemyCar.x, 20, mapWidth - 20);
-  enemyCar.y = constrain(enemyCar.y, 20, mapHeight - 20);
-}
-
-function checkCollision() {
-  // Simple bounding box collision detection
-  let playerBox = { x: playerCar.x - 15, y: playerCar.y - 7.5, w: 30, h: 15 };
-  let enemyBox = { x: enemyCar.x - 15, y: enemyCar.y - 7.5, w: 30, h: 15 };
-  return (
-	playerBox.x < enemyBox.x + enemyBox.w &&
-	playerBox.x + playerBox.w > enemyBox.x &&
-	playerBox.y < enemyBox.y + enemyBox.h &&
-	playerBox.y + playerBox.h > enemyBox.y
-  );
-}
-
-function drawCar(car, col) {
-  push();
-  translate(car.x, car.y);
-  rotate(car.angle);
-  fill(col);
-  rectMode(CENTER);
-  rect(0, 0, 30, 15); // Simple car shape
-  pop();
-}
-
-function keyPressed() {
-  // Reset game with 'R'
-  if (keyCode === 82) {
-	playerCar.x = mapWidth / 2;
-	playerCar.y = mapHeight / 2;
-	playerCar.speed = 0;
-	playerCar.angle = 0;
-	enemyCar.x = random(50, mapWidth - 50);
-	enemyCar.y = random(50, mapHeight - 50);
-	enemyCar.speed = 0;
-	enemyCar.angle = 0;
-	gameOver = false;
-  }
-}
-</script>
-</body>
-</html>
+func _on_killzone_body_entered(body: Node2D) -> void:
+	if body.has_method("reload_scene"):
+		body.reload_scene()

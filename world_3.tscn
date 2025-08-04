@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cj3fndq5v63cs"]
+[gd_scene load_steps=15 format=3 uid="uid://cj3fndq5v63cs"]
 
 [ext_resource type="Texture2D" uid="uid://m6idy6al3a37" path="res://Race-Track-Tile-Set-PNG/PNG/Decor/Rock_01.png" id="1_usgg7"]
 [ext_resource type="Texture2D" uid="uid://dh1ekapectsw8" path="res://Race-Track-Tile-Set-PNG/PNG/Decor/Tree_01.png" id="2_6c7x5"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://dy3k4y6yylcao" path="res://Race-Track-Tile-Set-PNG/PNG/Road_02/Road_02_Tile_07/Layers/Road_Side_01.png" id="9_w512l"]
 [ext_resource type="AudioStream" uid="uid://cn6fu78i8amja" path="res://Fantasy RPG Music Pack/mp3/Action 3.mp3" id="11_rtwtq"]
 [ext_resource type="Texture2D" uid="uid://bg55j6ntpnsy2" path="res://images.jpg" id="13_5ue4o"]
+[ext_resource type="PackedScene" uid="uid://dvmqk75dxymfn" path="res://coin.tscn" id="13_qqx5l"]
+[ext_resource type="PackedScene" uid="uid://dsi3h0ivnqg1o" path="res://enemy car 2_0.tscn" id="14_qqx5l"]
 
 [node name="world3" type="Sprite2D"]
 position = Vector2(-917.887, 20593)
@@ -232,8 +234,6 @@ texture = ExtResource("9_w512l")
 [node name="player cars" parent="." instance=ExtResource("5_bk3r8")]
 position = Vector2(-6.10352e-05, 1726.66)
 scale = Vector2(0.6, 0.2)
-engine_power = 1600.0
-steering_power = 16.605
 
 [node name="Camera2D" type="Camera2D" parent="player cars"]
 rotation = 3.14158
@@ -252,5 +252,17 @@ offset_right = 721.278
 offset_bottom = -2936.0
 scale = Vector2(0.52, 0.19)
 texture_normal = ExtResource("13_5ue4o")
+
+[node name="Area2D" parent="." instance=ExtResource("13_qqx5l")]
+position = Vector2(1106.89, -2824.01)
+scale = Vector2(0.96, 0.29)
+
+[node name="enemy car 2_0" parent="." instance=ExtResource("14_qqx5l")]
+position = Vector2(36.7643, 2475.49)
+scale = Vector2(0.325, 0.241018)
+target_path = NodePath("../player cars")
+speed = 1000.0
+rotation_speed = 30.0
+friction = 40.0
 
 [connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]

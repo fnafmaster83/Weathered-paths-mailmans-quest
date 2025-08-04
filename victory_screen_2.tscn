@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy8wurlagtluv"]
+
+[ext_resource type="Texture2D" uid="uid://cvtm4mttmmr14" path="res://Screenshot 2025-06-16 114501.png" id="1_6iuu7"]
+[ext_resource type="Script" uid="uid://d0txtbmb8vs4q" path="res://victory_screen_2.gd" id="1_07odp"]
+
+[node name="victory screen 2" type="TextEdit"]
+offset_right = 1152.0
+offset_bottom = 648.0
+text = "great job you beat the second level out of 5 try and beat the rest friend"
+script = ExtResource("1_07odp")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 594.0
+offset_top = 318.0
+offset_right = 1152.0
+offset_bottom = 645.0
+texture_normal = ExtResource("1_6iuu7")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
