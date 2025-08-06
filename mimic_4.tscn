@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwcgscrpinedb"]
+
+[ext_resource type="Script" uid="uid://dgxqwhd38s6mg" path="res://mimic_4.gd" id="1_rangh"]
+[ext_resource type="Texture2D" uid="uid://cxbrvqlk60ssq" path="res://Race-Track-Tile-Set-PNG/PNG/Background_Tiles/Water_Tile.png" id="2_qevf8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_si84f"]
+size = Vector2(512, 512)
+
+[node name="mimic4" type="CharacterBody2D"]
+script = ExtResource("1_rangh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(525, 260)
+texture = ExtResource("2_qevf8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(525, 260)
+shape = SubResource("RectangleShape2D_si84f")

@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://ci2ee5eqjxrn7"]
 
 [ext_resource type="Script" uid="uid://ddsl4op2t26h7" path="res://mimic.gd" id="1_njw1c"]
-[ext_resource type="Texture2D" uid="uid://bwnvm7hqnfoc1" path="res://Race-Track-Tile-Set-PNG/PNG/Decor/Racing_Lights.png" id="2_njw1c"]
+[ext_resource type="Texture2D" uid="uid://dh1ekapectsw8" path="res://Race-Track-Tile-Set-PNG/PNG/Decor/Tree_01.png" id="2_njw1c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4t4u1"]
-size = Vector2(134.201, 20)
+size = Vector2(65.9351, 56.2471)
 
 [node name="mimic" type="CharacterBody2D"]
 position = Vector2(250, -192)
@@ -15,6 +15,6 @@ position = Vector2(-5, -2)
 texture = ExtResource("2_njw1c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4.99997, 0)
+position = Vector2(2, -13.5)
 scale = Vector2(14.5901, 15.2008)
 shape = SubResource("RectangleShape2D_4t4u1")

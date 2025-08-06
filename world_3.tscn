@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cj3fndq5v63cs"]
+[gd_scene load_steps=19 format=3 uid="uid://cj3fndq5v63cs"]
 
 [ext_resource type="Texture2D" uid="uid://m6idy6al3a37" path="res://Race-Track-Tile-Set-PNG/PNG/Decor/Rock_01.png" id="1_usgg7"]
 [ext_resource type="Texture2D" uid="uid://dh1ekapectsw8" path="res://Race-Track-Tile-Set-PNG/PNG/Decor/Tree_01.png" id="2_6c7x5"]
@@ -14,6 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://bg55j6ntpnsy2" path="res://images.jpg" id="13_5ue4o"]
 [ext_resource type="PackedScene" uid="uid://dvmqk75dxymfn" path="res://coin.tscn" id="13_qqx5l"]
 [ext_resource type="PackedScene" uid="uid://dsi3h0ivnqg1o" path="res://enemy car 2_0.tscn" id="14_qqx5l"]
+[ext_resource type="PackedScene" uid="uid://ci2ee5eqjxrn7" path="res://mimic.tscn" id="15_yohy1"]
+[ext_resource type="PackedScene" uid="uid://dhvu0yqte8v8e" path="res://mimic_2.tscn" id="16_02ay3"]
+[ext_resource type="Texture2D" uid="uid://cfq7kac8iga2r" path="res://Race-Track-Tile-Set-PNG/PNG/Road_02/Road_02_Tile_08/Layers/Road_Side_01.png" id="17_8mr8p"]
+[ext_resource type="PackedScene" uid="uid://ecnujfopvf2d" path="res://mimic_3.tscn" id="18_6dpta"]
 
 [node name="world3" type="Sprite2D"]
 position = Vector2(-917.887, 20593)
@@ -234,6 +238,9 @@ texture = ExtResource("9_w512l")
 [node name="player cars" parent="." instance=ExtResource("5_bk3r8")]
 position = Vector2(-6.10352e-05, 1726.66)
 scale = Vector2(0.6, 0.2)
+engine_power = 1200.0
+steering_power = 5.0
+drift_factor = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="player cars"]
 rotation = 3.14158
@@ -264,5 +271,97 @@ target_path = NodePath("../player cars")
 speed = 1000.0
 rotation_speed = 30.0
 friction = 40.0
+
+[node name="mimic" parent="." instance=ExtResource("15_yohy1")]
+position = Vector2(-876.521, 2091.42)
+scale = Vector2(1.29616, 1.0263)
+
+[node name="mimic2" parent="." instance=ExtResource("15_yohy1")]
+position = Vector2(-1346.55, 1573.95)
+
+[node name="mimic3" parent="." instance=ExtResource("15_yohy1")]
+position = Vector2(1351.23, 1827.99)
+
+[node name="mimic4" parent="." instance=ExtResource("15_yohy1")]
+position = Vector2(638.768, 2033.75)
+
+[node name="mimic5" parent="." instance=ExtResource("15_yohy1")]
+position = Vector2(1519.46, 1048.41)
+
+[node name="mimic6" parent="." instance=ExtResource("15_yohy1")]
+position = Vector2(-1317.46, 745.372)
+
+[node name="mimic7" parent="." instance=ExtResource("15_yohy1")]
+position = Vector2(-1049.21, -152.389)
+
+[node name="mimic8" parent="." instance=ExtResource("15_yohy1")]
+position = Vector2(1251.21, 173.039)
+
+[node name="mimic9" parent="." instance=ExtResource("15_yohy1")]
+position = Vector2(1251.21, -691.129)
+
+[node name="mimic10" parent="." instance=ExtResource("15_yohy1")]
+position = Vector2(-847.354, -1030.03)
+
+[node name="mimic11" parent="." instance=ExtResource("15_yohy1")]
+position = Vector2(-967.85, -1440)
+
+[node name="mimic12" parent="." instance=ExtResource("15_yohy1")]
+position = Vector2(1138.45, -1440)
+
+[node name="mimic13" parent="." instance=ExtResource("15_yohy1")]
+position = Vector2(2122.98, -1453.44)
+
+[node name="mimic14" parent="." instance=ExtResource("15_yohy1")]
+position = Vector2(3016.66, -1466.87)
+
+[node name="mimic15" parent="." instance=ExtResource("15_yohy1")]
+position = Vector2(3781.24, -1480.31)
+
+[node name="mimic16" parent="." instance=ExtResource("15_yohy1")]
+position = Vector2(4856.62, -1493.75)
+
+[node name="mimic17" parent="." instance=ExtResource("15_yohy1")]
+position = Vector2(-1737.21, -1507.19)
+
+[node name="mimic18" parent="." instance=ExtResource("15_yohy1")]
+position = Vector2(-2619.41, -1507.19)
+
+[node name="mimic19" parent="." instance=ExtResource("15_yohy1")]
+position = Vector2(-3462.41, -1520.62)
+
+[node name="mimic20" parent="." instance=ExtResource("15_yohy1")]
+position = Vector2(-4270.02, -1493.75)
+
+[node name="mimic21" parent="." instance=ExtResource("15_yohy1")]
+position = Vector2(-5219.65, -1493.75)
+
+[node name="mimic22" parent="." instance=ExtResource("15_yohy1")]
+position = Vector2(5508.83, -2094.08)
+
+[node name="mimic23" parent="." instance=ExtResource("15_yohy1")]
+position = Vector2(-5687.29, -2094.08)
+
+[node name="mimic24" parent="." instance=ExtResource("16_02ay3")]
+position = Vector2(-12933.3, -1990.5)
+rotation = -0.261799
+scale = Vector2(3.75813, -0.14507)
+
+[node name="mimic25" parent="." instance=ExtResource("16_02ay3")]
+position = Vector2(1973.31, -2449.32)
+scale = Vector2(3.59338, 0.0874023)
+
+[node name="RoadSide04" type="Sprite2D" parent="."]
+position = Vector2(-7918.86, -3110.11)
+scale = Vector2(-5.75162, 1)
+texture = ExtResource("17_8mr8p")
+
+[node name="mimic26" parent="." instance=ExtResource("18_6dpta")]
+position = Vector2(3783.15, -3271.77)
+scale = Vector2(-25.5417, 3.61751)
+
+[node name="mimic27" parent="." instance=ExtResource("18_6dpta")]
+position = Vector2(485.279, -2969.02)
+scale = Vector2(11.5311, 2.00211)
 
 [connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]

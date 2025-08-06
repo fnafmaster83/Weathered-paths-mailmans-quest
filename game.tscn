@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://l7cuyn6608wm"]
+[gd_scene load_steps=50 format=3 uid="uid://l7cuyn6608wm"]
 
 [ext_resource type="Texture2D" uid="uid://tawrrd5thit8" path="res://Race-Track-Tile-Set-PNG/PNG/Background_Tiles/Soil_Tile.png" id="1_5b14r"]
 [ext_resource type="Script" uid="uid://bs3sikh7vibwj" path="res://game.gd" id="1_t46w6"]
@@ -48,6 +48,7 @@
 [ext_resource type="Texture2D" uid="uid://bg55j6ntpnsy2" path="res://images.jpg" id="46_m28ev"]
 [ext_resource type="PackedScene" uid="uid://dsi3h0ivnqg1o" path="res://enemy car 2_0.tscn" id="47_lwlx3"]
 [ext_resource type="PackedScene" uid="uid://ci2ee5eqjxrn7" path="res://mimic.tscn" id="48_0de7l"]
+[ext_resource type="PackedScene" uid="uid://dwcgscrpinedb" path="res://mimic_4.tscn" id="49_87ddb"]
 
 [node name="game" type="Node2D"]
 position = Vector2(-21647, 27911)
@@ -58,14 +59,9 @@ metadata/_edit_horizontal_guides_ = [19234.0]
 [node name="LevelDesign" type="Node2D" parent="."]
 
 [node name="WaterTile6" type="Sprite2D" parent="LevelDesign"]
-position = Vector2(3391.15, -7523.53)
+position = Vector2(3301.9, -7522.39)
 scale = Vector2(27.1465, 34.1269)
 texture = ExtResource("29_xfvwf")
-
-[node name="SoilTile10" type="Sprite2D" parent="LevelDesign"]
-position = Vector2(959.351, 330.602)
-scale = Vector2(6.5468, 3.20115)
-texture = ExtResource("1_5b14r")
 
 [node name="Tree01" type="Sprite2D" parent="LevelDesign"]
 position = Vector2(-228, 713)
@@ -75,6 +71,11 @@ texture = ExtResource("2_bnpwn")
 [node name="Start" type="Sprite2D" parent="LevelDesign"]
 position = Vector2(806, 714)
 texture = ExtResource("3_36jdj")
+
+[node name="SoilTile10" type="Sprite2D" parent="LevelDesign"]
+position = Vector2(959.351, 330.604)
+scale = Vector2(6.5468, 3.20115)
+texture = ExtResource("1_5b14r")
 
 [node name="Tree02" type="Sprite2D" parent="LevelDesign"]
 position = Vector2(-275, 199.001)
@@ -657,7 +658,6 @@ texture = ExtResource("19_m28ev")
 
 [node name="player cars" parent="." instance=ExtResource("42_eu6ph")]
 position = Vector2(748.576, 916.82)
-engine_power = 1000.0
 steering_power = 18.0
 drift_factor = 1.0
 
@@ -704,54 +704,403 @@ friction = 40.0
 polygon = PackedVector2Array(-857.586, -465.415, 109.01, -473.368, 241.073, -801.317, 442.625, -1025.13, -426.488, -1017.17, -746.271, -1217.12, -920.16, -1592.79, -864.502, -2040.79, -475.229, -2312.31, 519.031, -2336.55, 1534.37, -2320.64, 1778.73, -2203.25, 2063.61, -2332, 2511.83, -2332, 2878.38, -2097.97, 3244.6, -2097.97, 3631.57, -1863.93, 4038.95, -1828.72, 4252.69, -2297.16, 4659.75, -2402.44, 4731.21, -2320.64, 5138.27, -2343.74, 5270.66, -2893.98, 5128.06, -3291.99, 4486.85, -3280.25, 4242.48, -3362.43, 3987.91, -3257.15, 3488.97, -3291.99, 3153.05, -3479.45, 2745.99, -3514.66, 2379.44, -3772.18, 1961.84, -3818.76, 1483.32, -4041.43, 1493.53, -3830.5, 974.5, -3830.5, -3678, -3736.96, -3749.14, 1195.54, -754.504, 1180.01)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(-167.96, -221.158)
 polygon = PackedVector2Array(912.256, -3914.94, 722.559, -4133.07, 736.062, -4881, 1494.85, -4881, 1887.74, -4694.3, 2036.93, -4631.81, 2375.49, -4585.23, 2727.87, -4398.16, 3175.11, -4289.1, 3459.66, -4164.5, 4001.74, -4039.54, 5072.08, -4039.54, 5275.27, -4569.33, 5505.81, -5208.19, 5830.86, -5410.79, 6372.94, -5223.71, 6576.14, -5068.07, 6684.5, -5255.15, 6386.45, -5426.32, 5993.55, -5535.38, 5736.01, -5722.45, 4313.29, -5691.4, 4313.29, -5441.84, 3906.89, -5457.75, 3500.16, -5426.32, 3107.27, -5426.32, 3025.92, -5192.66, 2185.79, -5130.55, 2321.48, -5441.84, 1738.88, -5675.88, 2077.44, -5769.41, 2077.44, -6376.84, 2890.57, -6361.31, 3242.95, -6345.79, 3459.66, -6688.5, 3839.05, -6844.53, 3649.35, -7155.81, 3256.46, -7249.35, 2809.22, -7046.75, 1630.2, -7062.66, 1657.54, -7670.08, 1142.46, -7685.61, 73.1123, -7760.97, -1694.42, -7911.69, -2480.22, -7560.26, -3156.67, -8636.89, -3003.86, -9063.3, -2982.12, -10970.4, -2742.04, -10995.8, -2720.3, -13806.1, -2196.33, -14032.2, -2327.4, -14784.6, -2458.15, -16147.2, 1279.13, -16108.5, 583.251, -15797.2, 544.719, -14241.6, 978.452, -13492.5, 978.452, -11466.9, 2631.71, -11139.7, 3688.54, -11108.6, 4067.94, -10672, 4311.97, -10625.4, 4799.72, -11233.2, 5653.35, -11124.2, 6222.44, -10640.9, 5843.05, -10781.1, 5856.55, -8054.46, 5829.54, -6349.19, 6236.27, -6395.77, 6493.48, -7097.12, 7496.3, -7081.59, 7767.35, -6847.94, 7889.2, -6458.26, 8444.79, -6411.3, 8417.78, -7346.3, 9420.6, -7330.77, 9461.11, -6473.78, 9447.61, -5897.41, 9447.61, -5523.26, 7618.16, -5243.03, 7536.81, -4697.71, 7252.27, -4323.56, 6439.47, -4214.49, 6168.43, -4432.62, 6046.25, -4136.48, 7171.25, -4089.9, 8363.44, -4167.91, 9569.46, -4089.9, 9366.26, -3170.43, 8363.44, -3201.86, 7821.36, -3263.97, 6900.21, -3186.34, 6805.36, -3341.98, 5856.55, -3186.34, 5802.54, -2905.72, 5992.23, -2422.51, 5713.62, -1797.28, 5362.22, -1613.62, 4786.87, -1613.62, 4467.42, -1025.5, 3317.38, -988.771, 2422.58, -1503.42, 1943.4, -1613.62, 1975.35, -915.305, 1975.35, -621.438, 2773.98, -584.704, 2773.98, 847.897, 2742.04, 1325.81, 10282.5, 1252.34, 10218.6, -16236.2, 2135.07, -16236.2, -3424.42, -16199.4, -3584.14, -4001.67)
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(4442.06, -6179.54, 4857.02, -6137.88, 4911.03, -9746.46, 4153.56, -9497.66, 3612.47, -8937.57, 1105.57, -9020.51, -355.352, -8854.64, -355.352, -8730.05, 1520.21, -8564.18, 3251.85, -8336.21, 4135.45, -8024.92, 4514.18, -7651.9, 4730.56, -7195.58, 4694.66, -6469.62)
 
 [node name="mimic" parent="." instance=ExtResource("48_0de7l")]
-position = Vector2(-787.768, 398.765)
+position = Vector2(-787.767, 324.163)
 rotation = -1.57079
-scale = Vector2(0.95209, 0.54501)
+scale = Vector2(1.91036, 0.545006)
 
 [node name="mimic2" parent="." instance=ExtResource("48_0de7l")]
-position = Vector2(2635.33, 475.641)
+position = Vector2(2635.33, 326.813)
 rotation = 1.57079
-scale = Vector2(1, 0.469828)
+scale = Vector2(1.85189, -0.34876)
 
-[node name="mimic3" parent="." instance=ExtResource("48_0de7l")]
-position = Vector2(-716.631, -488.895)
-scale = Vector2(0.820345, 0.487469)
+[node name="mimic4" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(-5057.58, -2729.25)
+scale = Vector2(5.13655, 7.58929)
 
-[node name="mimic4" parent="." instance=ExtResource("48_0de7l")]
-position = Vector2(-1047.94, -1725.71)
-rotation = -1.57079
-scale = Vector2(1.28113, 0.553961)
+[node name="mimic5" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(-5057.58, -6594.59)
+scale = Vector2(5.13, 7.58)
 
-[node name="mimic5" parent="." instance=ExtResource("48_0de7l")]
-position = Vector2(360.95, -2528.54)
-scale = Vector2(1.47158, 0.697044)
+[node name="mimic6" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(6344.95, -2683.43)
+scale = Vector2(5.13, 7.58)
 
-[node name="mimic6" parent="." instance=ExtResource("48_0de7l")]
-position = Vector2(3382.26, -2528.54)
-scale = Vector2(1.7904, 0.666749)
+[node name="mimic7" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(4745.38, -2683.43)
+scale = Vector2(4, 7.58)
 
-[node name="mimic7" parent="." instance=ExtResource("48_0de7l")]
-position = Vector2(2825.03, -533.202)
-scale = Vector2(1, 0.52275)
+[node name="mimic8" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(4813.22, -1125.1)
+scale = Vector2(1.87314, 1)
 
-[node name="mimic8" parent="." instance=ExtResource("48_0de7l")]
-position = Vector2(1981.93, -905.459)
-rotation = 1.57079
-scale = Vector2(0.710184, 0.72734)
+[node name="mimic9" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(4544.15, -1125.1)
 
-[node name="mimic9" parent="." instance=ExtResource("48_0de7l")]
-position = Vector2(2820.09, -1381.86)
-rotation = 0.261799
-scale = Vector2(1, 0.697044)
+[node name="mimic10" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(4059.04, -1125.1)
 
-[node name="mimic10" parent="." instance=ExtResource("48_0de7l")]
-position = Vector2(-588.52, -760.04)
-scale = Vector2(0.736533, 2.21182)
+[node name="mimic11" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(2635.33, -1125.1)
+
+[node name="mimic12" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(3082.9, -1026.26)
+
+[node name="mimic13" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(3523.88, -1030.43)
+
+[node name="mimic14" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(2134.74, -1313.69)
+
+[node name="mimic15" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(1764.9, -1441.69)
+
+[node name="mimic16" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(1764.9, -1008.09)
+
+[node name="mimic17" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(4684.12, -1634.07)
+scale = Vector2(1.67184, 1)
+
+[node name="mimic18" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(2277.02, -1053.53)
+
+[node name="mimic19" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(4415.05, -1613.62)
+
+[node name="mimic20" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(-1434.91, -2743.64)
+
+[node name="mimic21" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(-930.04, -2879.22)
+
+[node name="mimic22" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(-405.081, -2879.22)
+
+[node name="mimic23" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(124.489, -2879.21)
+
+[node name="mimic24" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(649.447, -2879.21)
+
+[node name="mimic25" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(1174.41, -2875.05)
+
+[node name="mimic26" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(1699.36, -2879.22)
+
+[node name="mimic27" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(2193.04, -2879.22)
+
+[node name="mimic28" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(2635.33, -2619.05)
+
+[node name="mimic29" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(3136.58, -2483.48)
+
+[node name="mimic30" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(3513.01, -2325.94)
+scale = Vector2(0.697017, 1)
+
+[node name="mimic31" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(3523.88, -2743.64)
+
+[node name="mimic32" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(4025.12, -2879.22)
+
+[node name="mimic33" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(4415.05, -2879.21)
+
+[node name="mimic34" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(4415.05, -3285.93)
+
+[node name="mimic35" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(3917.43, -3285.93)
+
+[node name="mimic36" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(3405.64, -3271.92)
+
+[node name="mimic37" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(2915.59, -3285.93)
+
+[node name="mimic38" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(2403.81, -3477.93)
+
+[node name="mimic39" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(1955.26, -3563.14)
+
+[node name="mimic40" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(1443.47, -3707.8)
+
+[node name="mimic41" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(959.351, -3880.1)
+
+[node name="mimic42" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(530.887, -3880.1)
+
+[node name="mimic43" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(124.488, -4052.03)
+
+[node name="mimic44" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(38.5319, -4517.07)
+
+[node name="mimic45" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(-3861.44, -15209.5)
+scale = Vector2(17.8819, 7.25853)
+
+[node name="mimic46" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(3607.86, -11464.2)
+scale = Vector2(8.34749, 8.1458)
+
+[node name="mimic47" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(7724.86, -6761.97)
+
+[node name="mimic48" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(7724.86, -7261.09)
+
+[node name="mimic49" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(5526.56, -6761.97)
+
+[node name="mimic50" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(5526.56, -7256.93)
+
+[node name="mimic51" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(6064.03, -7319.03)
+
+[node name="mimic52" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(6588.99, -7319.03)
+
+[node name="mimic53" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(7323.4, -7319.03)
+
+[node name="mimic54" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(6900.87, -7319.03)
+
+[node name="mimic55" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(8880.82, -7319.03)
+scale = Vector2(1.72454, 9.13436)
+
+[node name="mimic56" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(8539.96, -3191.64)
+
+[node name="mimic57" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(7993.93, -3187.47)
+
+[node name="mimic58" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(7592.47, -3183.31)
+
+[node name="mimic59" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(7113.95, -3179.14)
+
+[node name="mimic60" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(6588.99, -3191.64)
+
+[node name="mimic61" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(6064.03, -3174.98)
+
+[node name="mimic62" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(5561.79, -3170.81)
+
+[node name="mimic63" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(7169.93, -5293.02)
+
+[node name="mimic64" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(7168.95, -4782.16)
+
+[node name="mimic65" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(7169.93, -4512.9)
+
+[node name="mimic66" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(7439, -5505.84)
+
+[node name="mimic67" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(7894.8, -5499.02)
+
+[node name="mimic68" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(8373.32, -5559.99)
+
+[node name="mimic69" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(8774.78, -5535)
+
+[node name="mimic70" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(7681.72, -4521.99)
+
+[node name="mimic71" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(8163.86, -4521.99)
+
+[node name="mimic72" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(8675.65, -4521.99)
+
+[node name="mimic73" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(38.5321, -5055.19)
+
+[node name="mimic74" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(530.887, -5397.16)
+
+[node name="mimic75" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(1055.85, -5392.99)
+
+[node name="mimic76" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(1520.87, -5274.84)
+
+[node name="mimic77" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(1776.1, -5055.19)
+
+[node name="mimic78" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(2277.02, -4944.24)
+
+[node name="mimic79" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(2544.11, -4782.16)
+
+[node name="mimic80" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(3057.87, -4684.07)
+
+[node name="mimic81" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(3267.98, -4508.74)
+
+[node name="mimic82" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(3700.4, -4521.99)
+
+[node name="mimic83" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(4229.97, -4517.07)
+
+[node name="mimic84" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(4442.39, -4795.03)
+
+[node name="mimic85" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(2659.7, -5505.84)
+
+[node name="mimic86" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(3160.29, -5494.86)
+
+[node name="mimic87" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(3674.71, -5490.69)
+
+[node name="mimic88" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(4054.43, -5786.08)
+
+[node name="mimic89" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(4584, -5781.91)
+
+[node name="mimic90" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(5010.82, -5777.74)
+
+[node name="mimic91" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(4584, -5274.84)
+
+[node name="mimic92" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(2193.04, -5230.53)
+
+[node name="mimic93" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(1699.36, -5505.84)
+
+[node name="mimic94" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(1520.87, -6023.14)
+
+[node name="mimic95" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(1520.86, -6501.81)
+
+[node name="mimic96" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(1520.86, -6996.76)
+
+[node name="mimic97" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(1520.86, -7208.07)
+
+[node name="mimic98" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(1968.43, -6761.97)
+
+[node name="mimic99" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(2462.1, -6761.97)
+
+[node name="mimic100" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(2635.33, -6736.6)
+
+[node name="mimic101" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(2033.97, -7203.91)
+
+[node name="mimic102" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(2544.11, -7208.07)
+
+[node name="mimic103" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(2987.06, -7208.07)
+
+[node name="mimic104" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(-3677.67, -8964.84)
+
+[node name="mimic105" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(-3558.46, -8448.68)
+
+[node name="mimic106" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(-3289.39, -8038.55)
+
+[node name="mimic107" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(-2777.6, -7832.16)
+
+[node name="mimic108" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(-2252.65, -7932.52)
+
+[node name="mimic109" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(-2050.43, -8038.55)
+
+[node name="mimic110" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(-1560.06, -8038.55)
+
+[node name="mimic111" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(1055.85, -7628.05)
+
+[node name="mimic112" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(948.812, -7809.06)
+
+[node name="mimic113" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(530.887, -7778.01)
+
+[node name="mimic114" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(38.5322, -7832.16)
+
+[node name="mimic115" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(-460.409, -7928.35)
+
+[node name="mimic116" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(-882.286, -7932.52)
+
+[node name="mimic117" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(-1269.58, -8038.55)
+
+[node name="mimic118" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(-3861.44, -16260)
+scale = Vector2(1.295, 14.175)
+
+[node name="mimic119" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(-3408.61, -11284.3)
+
+[node name="mimic120" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(-3408.61, -11831.2)
+
+[node name="mimic121" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(-3408.61, -12287.5)
+
+[node name="mimic122" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(-3408.61, -12723)
+
+[node name="mimic123" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(-3408.61, -13179.3)
+
+[node name="mimic124" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(-3408.61, -13635.3)
+
+[node name="mimic125" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(-3289.39, -13967.4)
+
+[node name="mimic126" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(-2850.06, -14312.8)
+
+[node name="mimic127" parent="." instance=ExtResource("49_87ddb")]
+position = Vector2(-2850.06, -14755.5)
 
 [connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]

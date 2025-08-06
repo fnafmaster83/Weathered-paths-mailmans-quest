@@ -8,6 +8,7 @@ size = Vector2(63, 166)
 
 [node name="car2" type="RigidBody2D" groups=["Player"]]
 script = ExtResource("1_rimcc")
+engine_power = 1000.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4.5, 27)

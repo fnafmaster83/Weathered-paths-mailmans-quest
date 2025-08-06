@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://duikoidpaqkab"]
+[gd_scene load_steps=19 format=3 uid="uid://duikoidpaqkab"]
 
 [ext_resource type="Texture2D" uid="uid://b8ssba53u21ml" path="res://Race-Track-Tile-Set-PNG/PNG/Background_Tiles/Grass_Tile.png" id="1_eiokd"]
 [ext_resource type="Script" uid="uid://ckgsr6my4laul" path="res://world_2.gd" id="1_n5srx"]
@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://bg55j6ntpnsy2" path="res://images.jpg" id="15_5stuy"]
 [ext_resource type="PackedScene" uid="uid://dvmqk75dxymfn" path="res://coin.tscn" id="15_lbh55"]
 [ext_resource type="PackedScene" uid="uid://dsi3h0ivnqg1o" path="res://enemy car 2_0.tscn" id="16_lbh55"]
+[ext_resource type="PackedScene" uid="uid://dhvu0yqte8v8e" path="res://mimic_2.tscn" id="17_hx72v"]
+[ext_resource type="PackedScene" uid="uid://ci2ee5eqjxrn7" path="res://mimic.tscn" id="18_bs22r"]
 
 [node name="world 2" type="Node2D"]
 position = Vector2(19551, 2523)
@@ -68,7 +70,7 @@ position = Vector2(2812, 280)
 texture = ExtResource("4_q40lw")
 
 [node name="GrassTile2" type="Sprite2D" parent="."]
-position = Vector2(7394, -128)
+position = Vector2(7671, 6.10352e-05)
 scale = Vector2(12.3145, 12.6758)
 texture = ExtResource("1_eiokd")
 
@@ -88,7 +90,7 @@ scale = Vector2(10.5469, 10.9004)
 texture = ExtResource("1_eiokd")
 
 [node name="GrassTile6" type="Sprite2D" parent="."]
-position = Vector2(-11516, -11676)
+position = Vector2(-11516.2, -11674.5)
 scale = Vector2(11.2676, 10.9004)
 texture = ExtResource("1_eiokd")
 
@@ -186,7 +188,7 @@ position = Vector2(-10809, -17242)
 texture = ExtResource("8_lbh55")
 
 [node name="RacingLights2" type="Sprite2D" parent="."]
-position = Vector2(-13563, -14560)
+position = Vector2(-13598.3, -14568.2)
 texture = ExtResource("7_5stuy")
 
 [node name="RacingLights3" type="Sprite2D" parent="."]
@@ -359,6 +361,7 @@ texture = ExtResource("10_ngp3s")
 
 [node name="player cars" parent="." instance=ExtResource("11_56e56")]
 position = Vector2(7156.21, 3015.03)
+engine_power = 2000.0
 
 [node name="Camera2D" type="Camera2D" parent="player cars"]
 rotation = 3.14159
@@ -381,10 +384,316 @@ position = Vector2(-12793.2, -21244.2)
 scale = Vector2(0.75, 0.95)
 
 [node name="enemy car 2_0" parent="." instance=ExtResource("16_lbh55")]
-position = Vector2(7151.79, 5307.5)
+position = Vector2(7200.84, 4850.18)
 target_path = NodePath("../player cars")
 speed = 1000.0
 rotation_speed = 30.0
 friction = 40.0
+
+[node name="mimic2" parent="." instance=ExtResource("17_hx72v")]
+position = Vector2(-10896.7, -14824.1)
+
+[node name="mimic" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-12917.9, -12954.1)
+
+[node name="mimic3" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-12249, -12634.3)
+
+[node name="mimic4" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-11582.2, -12189.2)
+
+[node name="mimic5" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-10997.1, -11584.6)
+
+[node name="mimic6" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-10240.2, -10913.1)
+
+[node name="mimic7" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-9303.39, -10360)
+
+[node name="mimic8" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-8395.78, -9513.64)
+
+[node name="mimic9" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-7774.84, -8504.77)
+
+[node name="mimic10" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-6697.2, -7690.77)
+
+[node name="mimic11" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-5699.78, -6825.33)
+
+[node name="mimic12" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-4735.71, -6128.73)
+
+[node name="mimic13" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-3710.55, -5575.14)
+
+[node name="mimic14" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-2744.6, -5119.3)
+
+[node name="mimic15" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-1749.05, -4566.2)
+
+[node name="mimic16" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-665.571, -3817.6)
+
+[node name="mimic17" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(262.034, -3038.61)
+
+[node name="mimic18" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(1414.01, -2464.88)
+
+[node name="mimic19" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(2379.85, -1441.63)
+
+[node name="mimic20" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(3404.56, -725.451)
+
+[node name="mimic21" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(3521.66, 218.649)
+
+[node name="mimic22" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(2438.18, 283.489)
+
+[node name="mimic23" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(1530.56, 511.409)
+
+[node name="mimic24" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(388.749, 837.079)
+
+[node name="mimic25" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-606.801, 1357.76)
+
+[node name="mimic26" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-1836.55, 2073.94)
+
+[node name="mimic27" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-1895.32, 2790.12)
+
+[node name="mimic28" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(4504.4, -3661.89)
+
+[node name="mimic29" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(5282.65, -3444.84)
+
+[node name="mimic30" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(6294.88, -3365.69)
+
+[node name="mimic31" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(7200.84, -3379.02)
+
+[node name="mimic32" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(8134.42, -3419.72)
+
+[node name="mimic33" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(9077.93, -3392.28)
+
+[node name="mimic34" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(9999.25, -3255.72)
+
+[node name="mimic35" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(10747.7, -2612.67)
+
+[node name="mimic36" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(10916.9, -1993.75)
+
+[node name="mimic37" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(10916.9, -1428.86)
+
+[node name="mimic38" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(10989.8, -702.856)
+
+[node name="mimic39" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(11062.3, 23.64)
+
+[node name="mimic40" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(11064.2, 947.539)
+
+[node name="mimic41" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(11086.6, 1691.29)
+
+[node name="mimic42" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(11086.6, 2417.78)
+
+[node name="mimic43" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(11110.5, 3009.69)
+
+[node name="mimic44" parent="." instance=ExtResource("17_hx72v")]
+position = Vector2(-11779.1, -14824.1)
+
+[node name="mimic45" parent="." instance=ExtResource("17_hx72v")]
+position = Vector2(-12582.9, -14824.1)
+
+[node name="mimic46" parent="." instance=ExtResource("17_hx72v")]
+position = Vector2(-13517.9, -14824.1)
+
+[node name="mimic47" parent="." instance=ExtResource("17_hx72v")]
+position = Vector2(-14400.8, -14824.1)
+
+[node name="mimic48" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-14220.1, -14167.9)
+
+[node name="mimic49" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-13194.9, -12918.8)
+
+[node name="mimic50" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-14343.8, -13930.2)
+
+[node name="mimic51" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(4155.42, -4566.26)
+
+[node name="mimic52" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(3991.48, -5468.12)
+
+[node name="mimic53" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(3991.48, -6362.12)
+
+[node name="mimic54" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(4083.29, -7222.65)
+
+[node name="mimic55" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(3886.76, -8057.77)
+
+[node name="mimic56" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(3240.63, -8288.57)
+
+[node name="mimic57" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(2265.4, -8472.28)
+
+[node name="mimic58" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(1455.44, -8637.33)
+
+[node name="mimic59" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(777.602, -8655.99)
+
+[node name="mimic60" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(83.4121, -8766.03)
+
+[node name="mimic61" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-660.268, -8655.99)
+
+[node name="mimic62" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-1536.07, -8582.31)
+
+[node name="mimic63" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-2164.42, -9004.75)
+
+[node name="mimic64" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-2891.31, -9207.13)
+
+[node name="mimic65" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-3249.13, -10015.2)
+
+[node name="mimic66" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-3240.73, -10770.2)
+
+[node name="mimic67" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-3155.99, -11676.9)
+
+[node name="mimic68" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-3249.13, -12512.5)
+
+[node name="mimic69" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-3139.2, -13404)
+
+[node name="mimic70" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-3371.53, -14181.2)
+
+[node name="mimic71" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-4114.43, -14377.6)
+
+[node name="mimic72" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-4792.27, -14506.3)
+
+[node name="mimic73" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-5453.31, -14561.3)
+
+[node name="mimic74" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-6048.52, -14726.8)
+
+[node name="mimic75" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-6692.78, -14524.4)
+
+[node name="mimic76" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-7370.62, -14469.4)
+
+[node name="mimic77" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-8097.95, -14451.3)
+
+[node name="mimic78" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-8395.34, -15039.2)
+
+[node name="mimic79" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-8578.17, -15696.5)
+
+[node name="mimic80" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-8581.37, -16608.2)
+
+[node name="mimic81" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-8599.82, -17377.9)
+
+[node name="mimic82" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-8631.64, -18204.6)
+
+[node name="mimic83" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-8648.87, -18930.6)
+
+[node name="mimic84" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-8648.87, -19660.1)
+
+[node name="mimic85" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-8648.87, -20393.5)
+
+[node name="mimic86" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-8707.74, -21239.7)
+
+[node name="mimic87" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-9257.88, -21899.9)
+
+[node name="mimic88" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-9741.74, -21998.2)
+
+[node name="mimic89" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-10687.8, -21875.9)
+
+[node name="mimic90" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-11303.8, -21899.9)
+
+[node name="mimic91" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-12213.1, -21875.9)
+
+[node name="mimic92" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-13080, -21875.9)
+
+[node name="mimic93" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-13951.1, -21856.2)
+
+[node name="mimic94" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-14477.8, -21368)
+
+[node name="mimic95" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-14448.6, -21042.3)
+
+[node name="mimic96" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-14448.6, -20293.7)
+
+[node name="mimic97" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-14360.7, -19414.9)
+
+[node name="mimic98" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-14536.6, -15411.1)
+
+[node name="mimic99" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-14214.4, -16355.2)
+
+[node name="mimic100" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-14331.5, -17299.3)
+
+[node name="mimic101" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-14185.3, -18568.6)
+
+[node name="mimic102" parent="." instance=ExtResource("18_bs22r")]
+position = Vector2(-13921.5, -18178.1)
 
 [connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]
