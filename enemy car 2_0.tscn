@@ -11,9 +11,12 @@ size = Vector2(956, 412)
 
 [node name="enemy car 2_0" type="CharacterBody2D"]
 script = ExtResource("1_liqib")
+acceleration = 800.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(30, 23)
 rotation = 1.57079
+scale = Vector2(0.768012, 0.762535)
 texture = ExtResource("1_fhi05")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

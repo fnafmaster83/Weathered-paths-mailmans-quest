@@ -238,9 +238,6 @@ texture = ExtResource("9_w512l")
 [node name="player cars" parent="." instance=ExtResource("5_bk3r8")]
 position = Vector2(-6.10352e-05, 1726.66)
 scale = Vector2(0.6, 0.2)
-engine_power = 1200.0
-steering_power = 5.0
-drift_factor = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="player cars"]
 rotation = 3.14158
